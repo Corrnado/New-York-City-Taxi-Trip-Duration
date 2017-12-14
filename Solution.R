@@ -23,3 +23,16 @@ pdate = ymd_hms(train$pickup_datetime)
 summary(pdate)
 
 # The time frame of the data collection is 01.01.2016 to 06.30.2016.
+
+# Get the geographic boundary of the data set and map it to a NYC regional map.
+library('ggmap') # data visulization
+library('mapproj') # data visulization
+
+ny_map <- get_map(location = "New York, NY", zoom = 9)
+map <- ggmap(ny_map)
+map <- map + geom_point(data = train, aes(x = pickup_longitude, y = pickup_latitude), col = 'red')
+map
+
+# It can be seen that there are severe outliers in the data set since the min and max 
+# of both pickup_longitude and pickup_latitude are way off the region of great New York City. 
+
