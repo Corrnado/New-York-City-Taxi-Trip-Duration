@@ -36,3 +36,5 @@ map
 # It can be seen that there are severe outliers in the data set since the min and max 
 # of both pickup_longitude and pickup_latitude are way off the region of great New York City. 
 
+
+
